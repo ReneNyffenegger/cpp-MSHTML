@@ -6,22 +6,22 @@ DisplayHTML.exe: DisplayHTML.o HTMLWindow.o DocHostUiHandler.o OleClientSite.o O
 MSHTMLTest.exe: MSHTMLTest.o HTMLWindow.o DocHostUiHandler.o OleClientSite.o OleInPlaceSite.o win32_Unicode.o VariantHelper.o UrlHelper.o Tracer.o stdHelpers.o
 	g++ -mwindows -o $@ $? -luuid -loleaut32 -lole32 
 
-DisplayHTML.o: DisplayHTML.cpp
+DisplayHTML.o: DisplayHTML.cpp HTMLWindow.h OleClientSite.h todoMoveSrc/Tracer.h OleInPlaceSite.h OleInPlaceFrame.h DocHostUiHandler.h 
 	g++ -c $<
 
-MSHTMLTest.o: MSHTMLTest.cpp
+MSHTMLTest.o: MSHTMLTest.cpp HTMLWindow.h OleClientSite.h todoMoveSrc/Tracer.h OleInPlaceSite.h OleInPlaceFrame.h DocHostUiHandler.h
 	g++ -c $<
 
-HTMLWindow.o: HTMLWindow.cpp HTMLWindow.h OleInPlaceSite.h
+HTMLWindow.o: HTMLWindow.cpp HTMLWindow.h OleClientSite.h todoMoveSrc/Tracer.h OleInPlaceSite.h OleInPlaceFrame.h DocHostUiHandler.h Storage.h todoMoveSrc/VariantHelper.h todoMoveSrc/win32_Unicode.h todoMoveSrc/UrlHelper.h
 	g++ -c $<
 
-DocHostUiHandler.o: DocHostUiHandler.cpp DocHostUiHandler.h HTMLWindow.h
+DocHostUiHandler.o: DocHostUiHandler.cpp DocHostUiHandler.h HTMLWindow.h OleClientSite.h todoMoveSrc/Tracer.h OleInPlaceSite.h OleInPlaceFrame.h todoMoveSrc/UrlHelper.h
 	g++ -c $<
 
 OleInPlaceSite.o: OleInPlaceSite.cpp OleInPlaceSite.h
 	g++ -c $<
 
-OleClientSite.o: OleClientSite.cpp OleClientSite.h
+OleClientSite.o: OleClientSite.cpp OleClientSite.h todoMoveSrc/Tracer.h
 	g++ -c $<
 
 win32_Unicode.o: todoMoveSrc\win32_Unicode.cpp todoMoveSrc\win32_Unicode.h
