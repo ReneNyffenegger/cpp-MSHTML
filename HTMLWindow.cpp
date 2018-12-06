@@ -23,6 +23,12 @@
    René Nyffenegger rene.nyffenegger@adp-gmbh.ch
 */
 
+//
+// Arguably, the two most important methods, from a user perspective, are
+//  - URL
+//  - HTML
+//
+
 #include "HTMLWindow.h"
 #include <ExDispId.h>
 #include <stdio.h>
